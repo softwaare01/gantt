@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="frappe-gantt.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <svg id="gantt"></svg>   
+    <link rel="stylesheet" href="frappe-gantt.css">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<form id="form" action="">
+    <div class="form-group">
+        <label for="todo">Task</label>
+        <input type="hidden" id="hiddenID" value="1">
+        
+        <label>Nom de la tache</label><br>
+        <input id="tname" type="text" class="form-control" name="taskName" placeholder="Task Name"><br>
+
+        <label for="start">Start date:</label><br>
+        <input type="date" id="start" name="date-start" value="2020-01-16" min="2020-01-01" max="2025-12-31"><br>
+
+        <label for="end">End date:</label><br>
+        <input type="date" id="end" name="date-end" value="2020-01-02" min="2020-01-01" max="2025-12-31"><br><br>
+
+
+        <label>Task status</label><br>
+        <input class="chk" type="checkbox" class="form-control" name="taskStatus" value="A commencer"> A commencer<br> 
+        <input class="chk" type="checkbox" class="form-control" name="taskStatus" value="Débuté"> En cours <br>
+        <input class="chk" type="checkbox" class="form-control" name="taskStatus" value="En cours"> Terminé <br><br>
+
+        <label>Ajouter des ressources</label><br>
+        <input id="sname" type="text" class="form-control" name="sourceName" placeholder="Source Name"><br><br>
+
+        <label>Ajouter une étape importante</label><br>
+        <input id="istep" type="text" class="form-control" name="importantStep" placeholder="Step"><br><br>
+
+        <button type="submit" class="btn btn-primary">Create</button><br><br>
+        <button type="submit" class="btn btn-primary">Update</button><br><br>
+    </div>
+</form>
+
+    <script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script  src="https://cdn.jsdelivr.net/gh/rexeze/formatTimeStamp/src/index.min.js"></script>
+    <!--<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>-->
+    <script src="http://localhost:4005/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+    
+</body>
+</html>
